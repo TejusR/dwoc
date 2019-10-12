@@ -4,7 +4,7 @@ public class User {
     String email,username,password,password2,fullname,home_location,phone_number,vehicle_type,vehicle_number,status;
     int age;
     char gender;
-    double rating,CO2,distance;
+    double rating,CO2,distance,fare_saved;
     public User () {}
 
     public User(String email, String username, String password, String password2, String fullname, String home_location, String phone_number,int age,char gender) {

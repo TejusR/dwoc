@@ -55,9 +55,10 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     userApi = retrofit.create(UserApi.class);
                     User user1 = new User();
-                    user1.username = email.getText().toString();
+                    user1.email = email.getText().toString();
                     user1.password = pass.getText().toString();
-                    mCall = userApi.requestLogin(user1);
+                    mCall =userApi.requestRegister(user.email,user.username,user.fullname,user.age,user.gender,user.phone_number,user.home_location,user.password,user.password2);
+
                     mCall.enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
@@ -68,10 +69,12 @@ public class LoginActivity extends AppCompatActivity {
                                 String []item = arr[1].split(":");
                                 String []item1 = arr[0].split(":");
                                 String v = item[1].replace("}","") + " " +  item1[1].replace("}","");
+
                                 Toast.makeText(getApplicationContext(),v,Toast.LENGTH_LONG).show();
                                 if(v.contains("Success")){
                                     SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
                                     SharedPreferences.Editor editor = pref.edit();
+                                    editor.putString("name",arr[2].split(":")[1]);
                                     editor.remove("email");
                                     editor.putString("email",email.getText().toString());
                                     editor.commit();
