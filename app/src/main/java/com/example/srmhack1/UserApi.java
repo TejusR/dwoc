@@ -38,4 +38,8 @@ public interface UserApi {
 
     @GET("json")
     Call<String> requestDistance(@Query("key") String key);
+
+    @FormUrlEncoded
+    @POST("ride_pairing")
+    Call<String> requestPair(@Field("app_user") String email,@Field("driver") String driver,@Field("start_location") String start_location,@Field("end_location") String end_location,@Field("start_time") String start_time,@Field("end_time") String end_time);
 }
