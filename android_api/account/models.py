@@ -18,7 +18,6 @@ class User_manager(BaseUserManager):
 
 
 
-
 class User(AbstractUser):
 
     fullname = models.CharField(max_length=32, unique=False)

@@ -39,7 +39,6 @@ def view_user(request):
             account = User.objects.get(email=temp)
             data['email'] = account.email
             data['fullname'] = account.fullname
-            data['age'] = account.age
             data['gender'] = account.gender
             data['home_location'] = account.home_location
             data['phone_number'] = account.phone_number
@@ -72,6 +71,31 @@ def view_register(request):
             User.objects.create_user(
                 fullname, email, gender, password1, phone_number,home_location
             )
+            data['error_message'] = 'No error'
+            data['response'] = 'success'
+            return JsonResponse(data,safe=False)
+        
+        else:
+            data['error_message'] = 'error'
+            data['response'] = 'error'
+            return JsonResponse(data,safe=False)
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def view_update(request):
+    if request.method == 'POST':
+        data = {}
+        email = request.POST.get('email','0')
+        home_location = request.POST.get('home_location','0')
+        rating=request.POST.get('rating','0')
+
+        obj = User.objects.filter(email=email).first()
+        print('sad')
+
+        if  obj:
+            obj.rating = rating
+            obj.home_location=home_location
+            obj.save()
             data['error_message'] = 'No error'
             data['response'] = 'success'
             return JsonResponse(data,safe=False)
