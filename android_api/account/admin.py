@@ -4,8 +4,8 @@ from account.models import *
 
 
 class AccountAdmin(UserAdmin):
-	list_display = ('email','username','phone_number','last_login')
-	search_fields = ('email','username',)
+	list_display = ('email','fullname','phone_number','last_login')
+	search_fields = ('email','fullname',)
 
 	filter_horizontal = ()
 	list_filter = ()

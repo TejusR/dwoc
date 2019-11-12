@@ -5,4 +5,5 @@ app_name = 'account'
 urlpatterns = [
     path('login',login_user,name="login"),
     path('properties',view_user,name="property"),
+    path('register',view_register,name="register"),
 ]
