@@ -11,5 +11,13 @@ class AccountAdmin(UserAdmin):
 	list_filter = ()
 	fieldsets = ()
 
+class ReqAdmin(admin.ModelAdmin):
+	list_display = ('requester','accepter','order_time','home_location','shop_location')
+
+	filter_horizontal = ()
+	list_filter = ()
+	fieldsets = ()
+
 
 admin.site.register(User, AccountAdmin)
+admin.site.register(Request,ReqAdmin)
