@@ -20,4 +20,4 @@ class ReqAdmin(admin.ModelAdmin):
 
 
 admin.site.register(User, AccountAdmin)
-admin.site.register(Request,ReqAdmin)
+
