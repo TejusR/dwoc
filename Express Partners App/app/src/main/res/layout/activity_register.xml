@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg4"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:layout_weight="3"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@android:color/black"
+        app:cardCornerRadius="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:text="USER REGISTRATION "
+                    android:textColor="@android:color/white"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/rollNoEditTextReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/login"
+                    android:layout_marginTop="164dp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textSize="16sp"
+                    app:met_baseColor="@android:color/white"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@android:color/white"
+                    app:met_textColor="@android:color/white"
+                    app:met_textColorHint="@android:color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/passwordEditTextReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rollNoEditTextReg"
+                    android:layout_marginTop="53dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textSize="16sp"
+                    app:met_baseColor="@android:color/white"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@android:color/white"
+                    app:met_textColor="@android:color/white"
+                    app:met_textColorHint="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/t1view"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/passwordEditTextReg"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar_cyclic_reg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/t1view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/progressBar_cyclic_reg">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:elevation="10dp"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <Button
+                            android:id="@+id/reg_Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:background="@android:color/holo_red_dark"
+                            android:text="Sign Up"
+                            android:textColor="@android:color/black" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
