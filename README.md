@@ -11,7 +11,9 @@ A simple door to door delivery app which can be used by college students. Users 
 1. ```git clone https://github.com/Vikram710/dwoc```
 2. ```cd dwoc```
 ### Building the app
-Open the Wander directory in Android Studio to build the application.
+1.Open the Express Partners App directory in Android Studio to build the application.
+2.Set-Up the server using the instructions below.
+3.To connect to server refer this:https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server
 ### Setting up the Server (Django)
 Open the dwoc/android_api in Visual Studio Code or any other text editor.
 1. ```python manage.py makemigrations``` 
